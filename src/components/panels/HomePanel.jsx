@@ -1,5 +1,21 @@
 import { businessInfo } from "@/lib/salesData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function HomePanel() {
   const branches = [
@@ -24,28 +40,35 @@ export default function HomePanel() {
   ];
 
   return (
-    <div className="space-y-8">
+    <motion.div 
+      className="space-y-8"
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+    >
       {/* Business Info */}
-      <div className="text-center">
+      <motion.div className="text-center" variants={fadeIn}>
         <h2 className="text-4xl font-bold">{businessInfo.name}</h2>
         <p className="text-muted-foreground mt-2">{businessInfo.description}</p>
-      </div>
+      </motion.div>
 
       {/* About Us Card */}
-      <Card>
-        <CardHeader>
-          <CardTitle>About Us</CardTitle>
-        </CardHeader>
-        <CardContent className="text-muted-foreground">
-          We are a trusted LPG trading company dedicated to providing
-          high-quality liquefied petroleum gas products to our customers. With
-          multiple branches across the region, we ensure reliable and efficient
-          service.
-        </CardContent>
-      </Card>
+      <motion.div variants={fadeIn}>
+        <Card>
+          <CardHeader>
+            <CardTitle>About Us</CardTitle>
+          </CardHeader>
+          <CardContent className="text-muted-foreground">
+            We are a trusted LPG trading company dedicated to providing
+            high-quality liquefied petroleum gas products to our customers. With
+            multiple branches across the region, we ensure reliable and efficient
+            service.
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Owners Grid */}
-      <div>
+      <motion.div variants={fadeIn}>
         <h3 className="text-2xl font-semibold mb-4">Owners</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {owners.map((owner) => (
@@ -59,22 +82,24 @@ export default function HomePanel() {
             </Card>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Name Origin Card */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Our Name</CardTitle>
-        </CardHeader>
-        <CardContent className="text-muted-foreground">
-          The name <strong>CJG</strong> is derived from the names of their
-          children: Christine Gomez, John Joseph Gomez, and their family last name
-          Gomez.
-        </CardContent>
-      </Card>
+      <motion.div variants={fadeIn}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Our Name</CardTitle>
+          </CardHeader>
+          <CardContent className="text-muted-foreground">
+            The name <strong>CJG</strong> is derived from the names of their
+            children: Christine Gomez, John Joseph Gomez, and their family last name
+            Gomez.
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Branches Grid */}
-      <div>
+      <motion.div variants={fadeIn}>
         <h3 className="text-2xl font-semibold mb-4">Our Branches</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {branches.map((branch) => (
@@ -89,10 +114,10 @@ export default function HomePanel() {
             </Card>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Services Grid */}
-      <div>
+      <motion.div variants={fadeIn}>
         <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
           {services.map((service) => (
@@ -103,17 +128,19 @@ export default function HomePanel() {
             </Card>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Contact Card */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Contact</CardTitle>
-        </CardHeader>
-        <CardContent className="text-muted-foreground">
-          {businessInfo.contact}
-        </CardContent>
-      </Card>
-    </div>
+      <motion.div variants={fadeIn}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact</CardTitle>
+          </CardHeader>
+          <CardContent className="text-muted-foreground">
+            {businessInfo.contact}
+          </CardContent>
+        </Card>
+      </motion.div>
+    </motion.div>
   );
 }
