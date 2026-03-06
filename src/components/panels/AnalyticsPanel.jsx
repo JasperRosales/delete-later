@@ -334,7 +334,7 @@ export default function AnalyticsPanel() {
 
       {/* Summary Cards */}
       <motion.div className="grid gap-4 md:grid-cols-4" variants={fadeIn}>
-        <Card className="bg-white">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Total Gross Sales
@@ -347,7 +347,7 @@ export default function AnalyticsPanel() {
           </CardContent>
         </Card>
 
-        <Card className="bg-white">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Total Net Sales
@@ -360,7 +360,7 @@ export default function AnalyticsPanel() {
           </CardContent>
         </Card>
 
-        <Card className="bg-white">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Total Deposits
@@ -373,7 +373,7 @@ export default function AnalyticsPanel() {
           </CardContent>
         </Card>
 
-        <Card className="bg-white">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Total Volume

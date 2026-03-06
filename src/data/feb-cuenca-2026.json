@@ -1,0 +1,37 @@
+{
+  "business_name": "CJG LPG TRADING",
+  "branch": "CUENCA",
+  "month": "February",
+  "year": 2026,
+  "data": [
+    { "date": 1, "gross": 5100, "benta_tanke": 0, "expenses": 580, "gcash": 0, "net": 4520, "deposit": 0, "tank_sales": { "27kg": 5, "11kg": 4, "22kg": 0, "50kg": 0 } },
+    { "date": 2, "gross": 23400, "benta_tanke": 0, "expenses": 870, "gcash": 0, "net": 22530, "deposit": 34000, "tank_sales": { "27kg": 27, "11kg": 10, "22kg": 1, "50kg": 0 } },
+    { "date": 3, "gross": 18400, "benta_tanke": 0, "expenses": 720, "gcash": 930, "net": 17750, "deposit": 0, "tank_sales": { "27kg": 20, "11kg": 6, "22kg": 0, "50kg": 0 } },
+    { "date": 4, "gross": 25950, "benta_tanke": 0, "expenses": 1160, "gcash": 0, "net": 24790, "deposit": 39000, "tank_sales": { "27kg": 29, "11kg": 12, "22kg": 2, "50kg": 1 } },
+    { "date": 5, "gross": 17000, "benta_tanke": 0, "expenses": 770, "gcash": 0, "net": 16230, "deposit": 0, "tank_sales": { "27kg": 18, "11kg": 5, "22kg": 0, "50kg": 0 } },
+    { "date": 6, "gross": 21700, "benta_tanke": 0, "expenses": 670, "gcash": 930, "net": 21100, "deposit": 24500, "tank_sales": { "27kg": 25, "11kg": 7, "22kg": 0, "50kg": 0 } },
+    { "date": 7, "gross": 27400, "benta_tanke": 1760, "expenses": 1450, "gcash": 0, "net": 25910, "deposit": 29500, "tank_sales": { "27kg": 30, "11kg": 11, "22kg": 1, "50kg": 0 } },
+    { "date": 8, "gross": 15800, "benta_tanke": 0, "expenses": 480, "gcash": 0, "net": 15320, "deposit": 17500, "tank_sales": { "27kg": 17, "11kg": 4, "22kg": 0, "50kg": 0 } },
+    { "date": 9, "gross": 23800, "benta_tanke": 0, "expenses": 580, "gcash": 0, "net": 23220, "deposit": 15500, "tank_sales": { "27kg": 26, "11kg": 8, "22kg": 0, "50kg": 0 } },
+    { "date": 10, "gross": 17300, "benta_tanke": 0, "expenses": 290, "gcash": 0, "net": 17010, "deposit": 0, "tank_sales": { "27kg": 19, "11kg": 5, "22kg": 0, "50kg": 0 } },
+    { "date": 11, "gross": 16500, "benta_tanke": 0, "expenses": 1930, "gcash": 0, "net": 14570, "deposit": 0, "tank_sales": { "27kg": 18, "11kg": 4, "22kg": 0, "50kg": 0 } },
+    { "date": 12, "gross": 22200, "benta_tanke": 0, "expenses": 3090, "gcash": 0, "net": 19110, "deposit": 34000, "tank_sales": { "27kg": 23, "11kg": 9, "22kg": 1, "50kg": 0 } },
+    { "date": 13, "gross": 21000, "benta_tanke": 0, "expenses": 95, "gcash": 0, "net": 20905, "deposit": 19500, "tank_sales": { "27kg": 32, "11kg": 5, "22kg": 0, "50kg": 0 } },
+    { "date": 14, "gross": 23400, "benta_tanke": 0, "expenses": 7550, "gcash": 930, "net": 15720, "deposit": 30500, "tank_sales": { "27kg": 28, "11kg": 8, "22kg": 1, "50kg": 1 } },
+    { "date": 15, "gross": 20400, "benta_tanke": 0, "expenses": 7750, "gcash": 930, "net": 12620, "deposit": 11700, "tank_sales": { "27kg": 21, "11kg": 6, "22kg": 0, "50kg": 0 } },
+    { "date": 16, "gross": 19450, "benta_tanke": 0, "expenses": 385, "gcash": 0, "net": 19065, "deposit": 13700, "tank_sales": { "27kg": 22, "11kg": 5, "22kg": 0, "50kg": 0 } },
+    { "date": 17, "gross": 20250, "benta_tanke": 0, "expenses": 675, "gcash": 0, "net": 19575, "deposit": 0, "tank_sales": { "27kg": 29, "11kg": 6, "22kg": 0, "50kg": 0 } },
+    { "date": 18, "gross": 28200, "benta_tanke": 0, "expenses": 195, "gcash": 1760, "net": 28005, "deposit": 0, "tank_sales": { "27kg": 25, "11kg": 9, "22kg": 0, "50kg": 0 } },
+    { "date": 19, "gross": 31000, "benta_tanke": 1760, "expenses": 1450, "gcash": 0, "net": 29510, "deposit": 83000, "tank_sales": { "27kg": 33, "11kg": 10, "22kg": 2, "50kg": 0 } },
+    { "date": 20, "gross": 14250, "benta_tanke": 0, "expenses": 1155, "gcash": 0, "net": 13095, "deposit": 20500, "tank_sales": { "27kg": 16, "11kg": 4, "22kg": 0, "50kg": 0 } },
+    { "date": 21, "gross": 18150, "benta_tanke": 0, "expenses": 965, "gcash": 0, "net": 17185, "deposit": 17600, "tank_sales": { "27kg": 20, "11kg": 6, "22kg": 0, "50kg": 0 } },
+    { "date": 22, "gross": 18850, "benta_tanke": 0, "expenses": 2025, "gcash": 0, "net": 16825, "deposit": 18100, "tank_sales": { "27kg": 21, "11kg": 5, "22kg": 0, "50kg": 0 } },
+    { "date": 23, "gross": 18250, "benta_tanke": 0, "expenses": 1060, "gcash": 930, "net": 17160, "deposit": 17600, "tank_sales": { "27kg": 21, "11kg": 6, "22kg": 0, "50kg": 0 } },
+    { "date": 24, "gross": 21600, "benta_tanke": 0, "expenses": 965, "gcash": 0, "net": 20635, "deposit": 0, "tank_sales": { "27kg": 23, "11kg": 7, "22kg": 1, "50kg": 0 } },
+    { "date": 25, "gross": 22000, "benta_tanke": 0, "expenses": 1160, "gcash": 0, "net": 20840, "deposit": 0, "tank_sales": { "27kg": 25, "11kg": 6, "22kg": 0, "50kg": 0 } },
+    { "date": 26, "gross": 30500, "benta_tanke": 1760, "expenses": 2900, "gcash": 930, "net": 27560, "deposit": 59000, "tank_sales": { "27kg": 32, "11kg": 9, "22kg": 1, "50kg": 0 } },
+    { "date": 27, "gross": 22600, "benta_tanke": 0, "expenses": 965, "gcash": 0, "net": 21635, "deposit": 30400, "tank_sales": { "27kg": 24, "11kg": 7, "22kg": 0, "50kg": 0 } },
+    { "date": 28, "gross": 21100, "benta_tanke": 0, "expenses": 1160, "gcash": 0, "net": 19940, "deposit": 20100, "tank_sales": { "27kg": 23, "11kg": 6, "22kg": 0, "50kg": 0 } }
+  ]
+}
+

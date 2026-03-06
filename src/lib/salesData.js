@@ -27,7 +27,9 @@ const loadAllData = async () => {
   // Dynamic imports - files will only be loaded when needed
   const [
     janAgo, janBay, janCal, janCue, janGul, janSta,
-    decAgo, decBay, decCal, decCue, decGul, decSta
+    decAgo, decBay, decCal, decCue, decGul, decSta,
+    novAgo, novBay, novCal, novCue, novGul, novSta,
+    febAgo, febBay, febCal, febCue, febGul, febSta
   ] = await Promise.all([
     import("@/data/jan-agoncillo-2026.json"),
     import("@/data/jan-bayan-2026.json"),
@@ -41,6 +43,18 @@ const loadAllData = async () => {
     import("@/data/dec-cuenca-2025.json"),
     import("@/data/dec-gulod-2025.json"),
     import("@/data/dec-stateresita-2025.json"),
+    import("@/data/nov-agoncillo-2025.json"),
+    import("@/data/nov-bayan-2025.json"),
+    import("@/data/nov-caloocan-2025.json"),
+    import("@/data/nov-cuenca-2025.json"),
+    import("@/data/nov-gulod-2025.json"),
+    import("@/data/nov-stateresita-2025.json"),
+    import("@/data/feb-agoncillo-2026.json"),
+    import("@/data/feb-bayan-2026.json"),
+    import("@/data/feb-caloocan-2026.json"),
+    import("@/data/feb-cuenca-2026.json"),
+    import("@/data/feb-gulod-2026.json"),
+    import("@/data/feb-stateresita-2026.json"),
   ]);
 
   cachedData = [
@@ -56,6 +70,18 @@ const loadAllData = async () => {
     ...extractData(decCue),
     ...extractData(decGul),
     ...extractData(decSta),
+    ...extractData(novAgo),
+    ...extractData(novBay),
+    ...extractData(novCal),
+    ...extractData(novCue),
+    ...extractData(novGul),
+    ...extractData(novSta),
+    ...extractData(febAgo),
+    ...extractData(febBay),
+    ...extractData(febCal),
+    ...extractData(febCue),
+    ...extractData(febGul),
+    ...extractData(febSta),
   ];
 
   return cachedData;
