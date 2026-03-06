@@ -12,14 +12,31 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'esnext',
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
+          // Split React core
           "vendor-react": ["react", "react-dom", "react/jsx-runtime"],
+          // Split Recharts (heavy - ~400KB)
           "vendor-recharts": ["recharts"],
+          // Split Framer Motion (heavy - ~100KB)
+          "vendor-motion": ["framer-motion"],
+          // Split UI components
+          "vendor-ui": [
+            "lucide-react",
+            "class-variance-authority",
+            "clsx",
+            "tailwind-merge",
+          ],
         },
       },
     },
+    chunkSizeWarningLimit: 1000,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
   },
 })
 
