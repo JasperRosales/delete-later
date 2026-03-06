@@ -78,12 +78,27 @@ export default function AnalyticsPanel() {
     return Array.from(yearSet).sort((a, b) => a - b);
   }, [data]);
 
-  // Get unique months for filter dropdown - sorted chronologically
+  // Get unique months for filter dropdown - sorted chronologically (considering year)
   const months = React.useMemo(() => {
     if (!data.length) return [];
     const monthOrder = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const monthSet = new Set(data.map((sale) => sale.month).filter(Boolean));
-    return Array.from(monthSet).sort((a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+    
+    // Get unique year-month combinations
+    const yearMonthSet = new Set();
+    data.forEach((sale) => {
+      if (sale.month && sale.year) {
+        yearMonthSet.add(JSON.stringify({ month: sale.month, year: sale.year }));
+      }
+    });
+    
+    // Sort by year and month order
+    return Array.from(yearMonthSet)
+      .map((item) => JSON.parse(item))
+      .sort((a, b) => {
+        if (a.year !== b.year) return a.year - b.year;
+        return monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month);
+      })
+      .map((item) => ({ month: item.month, year: item.year, label: `${item.month} ${item.year}` }));
   }, [data]);
 
   // Filter data based on selected filters
@@ -139,26 +154,35 @@ export default function AnalyticsPanel() {
   }, [filteredData]);
 
   const salesByMonth = React.useMemo(() => {
+    const monthOrder = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const dataMap = {};
     filteredData.forEach((sale) => {
-      const month = sale.month || "Unknown";
-      if (!dataMap[month]) {
-        dataMap[month] = { gross: 0, net: 0, deposit: 0, gcash: 0, count: 0 };
+      // Create a unique key combining month and year
+      const key = `${sale.year}-${sale.month}`;
+      if (!dataMap[key]) {
+        dataMap[key] = { 
+          name: `${sale.month?.substring(0, 3)} ${sale.year}`, 
+          month: sale.month,
+          year: sale.year,
+          gross: 0, 
+          net: 0, 
+          deposit: 0, 
+          gcash: 0, 
+          count: 0 
+        };
       }
-      dataMap[month].gross += sale.gross || 0;
-      dataMap[month].net += sale.net || 0;
-      dataMap[month].deposit += sale.deposit || 0;
-      dataMap[month].gcash += sale.gcash || 0;
-      dataMap[month].count += 1;
+      dataMap[key].gross += sale.gross || 0;
+      dataMap[key].net += sale.net || 0;
+      dataMap[key].deposit += sale.deposit || 0;
+      dataMap[key].gcash += sale.gcash || 0;
+      dataMap[key].count += 1;
     });
-    return Object.entries(dataMap).map(([name, vals]) => ({
-      name,
-      gross: vals.gross,
-      net: vals.net,
-      deposit: vals.deposit,
-      gcash: vals.gcash,
-      count: vals.count,
-    }));
+    
+    // Sort chronologically by year and month
+    return Object.values(dataMap).sort((a, b) => {
+      if (a.year !== b.year) return a.year - b.year;
+      return monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month);
+    });
   }, [filteredData]);
 
   const totalGross = React.useMemo(() => 
@@ -310,9 +334,9 @@ export default function AnalyticsPanel() {
               className="flex h-9 w-full sm:w-40 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
             >
               <option value="">All Months</option>
-              {months.map((month) => (
-                <option key={month} value={month}>
-                  {month}
+              {months.map((item) => (
+                <option key={`${item.year}-${item.month}`} value={item.month}>
+                  {item.label}
                 </option>
               ))}
             </select>
